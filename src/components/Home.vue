@@ -1,5 +1,28 @@
 <template>
-    <h1 class="mb-6 text-3xl font-extrabold">Home</h1>
+  <div class="flex h-screen bg-gray-100 font-roboto">
+    <Sidebar />
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <Header />
+
+      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+        <div class="container mx-auto px-6 py-8">
+          <slot />
+        </div>
+      </main>
+    </div>
+  </div>
 </template>
 
-<script setup></script>
+<script>
+
+import Sidebar from "./Sidebar.vue";
+import Header from "./Header.vue";
+
+export default {
+  components: {
+    Header,
+    Sidebar,
+  },
+};
+</script>
